@@ -1,14 +1,14 @@
-var express = require('express');
-import router from './src/routes';
+const express = require('express');
+import routes from "./src/network";
 
 var app = express();
+routes(app)
 
-const PUERTO = 9000;
-
-const initialize = () => {
-	console.log(`Server is running on port ${PUERTO}`);
+const example = function() {
+	console.log("estoy a la escucha")
 }
 
-router(app);
-
-app.listen(PUERTO, initialize);
+app.listen(
+	9000,
+	example
+)
